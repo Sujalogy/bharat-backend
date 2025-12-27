@@ -7,80 +7,138 @@ const getAnalytics = async (req, res) => {
       district: req.query.district,
       block: req.query.block,
       year: req.query.year,
-      subject: req.query.subject, // Capture subject
-      grade: req.query.grade      // Capture grade
+      subject: req.query.subject,
+      grade: req.query.grade
     };
+    
+    console.log('Analytics filters:', filters);
     const data = await dashboardService.getFilteredVisits(filters);
+    console.log(`Returning ${data.length} records`);
+    
     res.json(data);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error('Analytics error:', error);
+    res.status(500).json({ 
+      error: 'Internal Server Error',
+      message: error.message 
+    });
   }
 };
 
 const getSchoolsByBlock = async (req, res) => {
   const { block } = req.query;
+  
+  if (!block) {
+    return res.status(400).json({ error: 'Block parameter is required' });
+  }
+  
   try {
+    console.log('Fetching schools for block:', block);
     const schools = await dashboardService.getSchoolsByBlock(block);
+    console.log(`Found ${schools.length} schools`);
+    
     res.json(schools);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch schools' });
+    console.error('Schools fetch error:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch schools',
+      message: error.message 
+    });
   }
 };
 
 const getDashboardData = async (req, res) => {
-  // If called as /api/cro, the route or middleware should determine category
   const category = req.path.split('/').pop() || 'cro'; 
+  
   try {
+    console.log('Fetching dashboard data for category:', category);
     const data = await dashboardService.getMetricsByCategory(category);
+    
     res.json(data || {});
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch dashboard data' });
+    console.error('Dashboard data error:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch dashboard data',
+      message: error.message 
+    });
   }
 };
 
 const getHierarchy = async (req, res) => {
   try {
+    console.log('Fetching hierarchy metrics with filters:', req.query);
     const metrics = await dashboardService.getHierarchyMetrics(req.query);
+    
     res.json(metrics);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch hierarchy' });
+    console.error('Hierarchy error:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch hierarchy',
+      message: error.message 
+    });
   }
 };
 
 const getNationalGeo = async (req, res) => {
   try {
+    console.log('Fetching national boundaries');
     const data = await dashboardService.getNationalBoundaries();
+    
     res.json(data);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch national boundaries' });
+    console.error('National geo error:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch national boundaries',
+      message: error.message 
+    });
   }
 };
 
 const getStateGeo = async (req, res) => {
   try {
-    const data = await dashboardService.getStateBoundaries(req.params.stateName);
+    const { stateName } = req.params;
+    console.log('Fetching state boundaries for:', stateName);
+    
+    const data = await dashboardService.getStateBoundaries(stateName);
     res.json(data);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch state boundaries' });
+    console.error('State geo error:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch state boundaries',
+      message: error.message 
+    });
   }
 };
 
 const getDistrictGeo = async (req, res) => {
   try {
-    const data = await dashboardService.getDistrictBoundaries(req.params.distName);
+    const { distName } = req.params;
+    console.log('Fetching district boundaries for:', distName);
+    
+    const data = await dashboardService.getDistrictBoundaries(distName);
     res.json(data);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch district boundaries' });
+    console.error('District geo error:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch district boundaries',
+      message: error.message 
+    });
   }
 };
 
 const getBlockGeo = async (req, res) => {
   try {
-    const data = await dashboardService.getBlockBoundaries(req.params.blockName);
+    const { blockName } = req.params;
+    console.log('Fetching block boundaries for:', blockName);
+    
+    const data = await dashboardService.getBlockBoundaries(blockName);
     res.json(data);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch block boundaries' });
+    console.error('Block geo error:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch block boundaries',
+      message: error.message 
+    });
   } 
 };
 
