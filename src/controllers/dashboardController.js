@@ -11,9 +11,7 @@ const getAnalytics = async (req, res) => {
       grade: req.query.grade
     };
     
-    console.log('Analytics filters:', filters);
     const data = await dashboardService.getFilteredVisits(filters);
-    console.log(`Returning ${data.length} records`);
     
     res.json(data);
   } catch (error) {
@@ -33,9 +31,7 @@ const getSchoolsByBlock = async (req, res) => {
   }
   
   try {
-    console.log('Fetching schools for block:', block);
     const schools = await dashboardService.getSchoolsByBlock(block);
-    console.log(`Found ${schools.length} schools`);
     
     res.json(schools);
   } catch (error) {
@@ -51,7 +47,6 @@ const getDashboardData = async (req, res) => {
   const category = req.path.split('/').pop() || 'cro'; 
   
   try {
-    console.log('Fetching dashboard data for category:', category);
     const data = await dashboardService.getMetricsByCategory(category);
     
     res.json(data || {});
@@ -66,7 +61,6 @@ const getDashboardData = async (req, res) => {
 
 const getHierarchy = async (req, res) => {
   try {
-    console.log('Fetching hierarchy metrics with filters:', req.query);
     const metrics = await dashboardService.getHierarchyMetrics(req.query);
     
     res.json(metrics);
@@ -81,7 +75,6 @@ const getHierarchy = async (req, res) => {
 
 const getNationalGeo = async (req, res) => {
   try {
-    console.log('Fetching national boundaries');
     const data = await dashboardService.getNationalBoundaries();
     
     res.json(data);
@@ -97,7 +90,6 @@ const getNationalGeo = async (req, res) => {
 const getStateGeo = async (req, res) => {
   try {
     const { stateName } = req.params;
-    console.log('Fetching state boundaries for:', stateName);
     
     const data = await dashboardService.getStateBoundaries(stateName);
     res.json(data);
@@ -113,7 +105,6 @@ const getStateGeo = async (req, res) => {
 const getDistrictGeo = async (req, res) => {
   try {
     const { distName } = req.params;
-    console.log('Fetching district boundaries for:', distName);
     
     const data = await dashboardService.getDistrictBoundaries(distName);
     res.json(data);
@@ -129,7 +120,6 @@ const getDistrictGeo = async (req, res) => {
 const getBlockGeo = async (req, res) => {
   try {
     const { blockName } = req.params;
-    console.log('Fetching block boundaries for:', blockName);
     
     const data = await dashboardService.getBlockBoundaries(blockName);
     res.json(data);

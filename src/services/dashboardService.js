@@ -1,4 +1,6 @@
+// src/services/dashboardService.js
 const db = require("../config/db");
+
 const GEO_METRICS = {
   india: {
     area_sqkm: 3287263,
@@ -31,15 +33,16 @@ const getHierarchyMetrics = async (filters) => {
     let query = `
       SELECT 
         COUNT(DISTINCT udise_code) as schools_covered,
-        SUM(actual_visits)::int as visits,
+        COUNT(DISTINCT visit_date) as unique_visit_days,
         SUM(target_visits)::int as target,
         SUM(classroom_obs)::int as obs
       FROM (
         -- 1. HARYANA: DATA + TARGETS (All in one table)
         SELECT 
           udise_code, 
-          1 as actual_visits,            -- Each row in survey is 1 actual visit
-          0 as target_visits,            -- Targets handled in next block
+          visit_date,
+          1 as actual_visits,
+          0 as target_visits,
           1 as classroom_obs,
           'haryana' as state, 
           LOWER(district) as district, 
@@ -51,8 +54,9 @@ const getHierarchyMetrics = async (filters) => {
         -- 2. UP: ACTUAL VISITS & OBS (From Survey Table)
         SELECT 
           udise_code, 
-          1 as actual_visits,            -- Each row in survey is 1 actual visit
-          0 as target_visits,            -- Targets handled in next block
+          visit_date,
+          1 as actual_visits,
+          0 as target_visits,
           1 as classroom_obs,
           'uttar pradesh' as state, 
           LOWER(district) as district, 
@@ -64,6 +68,7 @@ const getHierarchyMetrics = async (filters) => {
         -- 3. UP: TARGETS (From Staff Work Plan Table)
         SELECT 
           NULL as udise_code, 
+          NULL as visit_date,
           0 as actual_visits, 
           COALESCE(total_visit_days, 0) as target_visits, 
           0 as classroom_obs, 
@@ -94,19 +99,17 @@ const getHierarchyMetrics = async (filters) => {
       const row = res.rows[0];
 
       const displayName = validBlock || validDistrict || validState || "India";
-
-      // Get Master School count from your constants
       const geo = GEO_METRICS[displayName.toLowerCase()] || {
         total_schools: 0,
       };
 
       const targetVal = parseInt(row.target || 0);
-      const visitsVal = parseInt(row.visits || 0);
+      const uniqueVisitDays = parseInt(row.unique_visit_days || 0);
 
       return {
         name: displayName,
-        achievement: targetVal > 0 ? (visitsVal / targetVal) * 100 : 0,
-        visits: visitsVal,
+        achievement: targetVal > 0 ? (uniqueVisitDays / targetVal) * 100 : 0,
+        visits: uniqueVisitDays,
         obs: parseInt(row.obs || 0),
         schools_covered: parseInt(row.schools_covered || 0),
         total_schools_master: geo.total_schools,
@@ -133,7 +136,7 @@ const getHierarchyMetrics = async (filters) => {
 };
 
 const getFilteredVisits = async (filters) => {
-  const { state, district, block, subject, grade } = filters;
+  const { state, district, block, subject, grade, visit_type } = filters;
 
   const haryanaQuery = `
     SELECT
@@ -142,27 +145,60 @@ const getFilteredVisits = async (filters) => {
       ay as academic_year,
       TRIM(TO_CHAR(visit_date, 'Month')) as month,
       (extract(month from visit_date) :: int - 1) as month_index,
-      'haryana' as state, -- Standardized small
-      district as district,
-      block as block,
+      'haryana' as state,
+      LOWER(district) as district,
+      LOWER(block) as block,
       (district || '-' || block) as bac_id,
       staff_name as bac_name,
       15 as recommended_visits,
-      1 as target_visits,
+      
+      -- TARGET: Get from staff_monthly_work_plan based on BAC and month
+      COALESCE(
+  (
+    SELECT smwp.total_visit_days
+    FROM master_targets.staff_monthly_work_plan smwp
+    WHERE LOWER(smwp.staff_name) = LOWER(haryana_cro_tool_2025_26.staff_name)
+      AND date_trunc('month', smwp.visit_month_year)
+          = date_trunc('month', haryana_cro_tool_2025_26.visit_date)
+      AND LOWER(smwp.state) = 'haryana'
+    LIMIT 1
+  ),
+  15
+) AS target_visits,
+      
       1 as actual_visits,
       1 as classroom_obs,
       subject,
       ('Grade ' || class) as grade,
+      
+      -- NEW: Visit Type
+      COALESCE(visit_type, 'Individual') as visit_type,
+      
       teacher_gender as gender,
       coalesce(enrolled_students :: int, 0) as students_enrolled,
       coalesce(present_students :: int, 0) as students_present,
       (q3 = 'Yes') as teacher_guide_available,
-      CASE WHEN q3 = 'Yes' THEN 'All Steps' WHEN q3 = 'No' THEN 'No Steps' ELSE 'Other' END as teacher_guide_followed,
-      CASE WHEN concat_ws('', q3_h_11, q3_m_6) = 'Yes' THEN true ELSE false END AS tracker_filled,
+      CASE 
+        WHEN q3 = 'Yes' THEN 'All Steps' 
+        WHEN q3 = 'No' THEN 'No Steps' 
+        ELSE 'Other' 
+      END as teacher_guide_followed,
+      CASE 
+        WHEN concat_ws('', q3_h_11, q3_m_6) = 'Yes' THEN true 
+        ELSE false 
+      END AS tracker_filled,
       (class_situation = 'mg') as is_multigrade,
       (ssi_2_effectiveness = 'Yes') as ssi2_effective,
       (ssi_3_effectiveness = 'Yes') as ssi3_effective,
-      jsonb_build_object('pp1', ssi_lit_1 = '1', 'pp2', ssi_lit_2 = '1', 'pp3', ssi_lit_3 = '1', 'pp4', ssi_lit_4 = '1', 'gp1', ssi_num_1 = '1', 'gp2', ssi_num_2 = '1', 'gp3', ssi_num_3 = '1') as practices,
+      jsonb_build_object(
+        'pp1', ssi_lit_1 = '1', 
+        'pp2', ssi_lit_2 = '1', 
+        'pp3', ssi_lit_3 = '1', 
+        'pp4', ssi_lit_4 = '1', 
+        'gp1', ssi_num_1 = '1', 
+        'gp2', ssi_num_2 = '1', 
+        'gp3', ssi_num_3 = '1'
+      ) as practices,
       udise_code as school_id,
       username as arp_id
     FROM surveycto_gsheet_data.haryana_cro_tool_2025_26
@@ -175,27 +211,60 @@ const getFilteredVisits = async (filters) => {
       ay as academic_year,
       TRIM(TO_CHAR(visit_date, 'Month')) as month,
       (extract(month from visit_date) :: int - 1) as month_index,
-      'uttar pradesh' as state, -- Standardized small
-      lower(district) as district,
-      lower(block) as block,
+      'uttar pradesh' as state,
+      LOWER(district) as district,
+      LOWER(block) as block,
       (district || '-' || block) as bac_id,
       staff_name as bac_name,
       15 as recommended_visits,
-      1 as target_visits,
+      
+      -- TARGET: Get from staff_monthly_work_plan based on BAC and month
+      COALESCE(
+  (
+    SELECT smwp.total_visit_days
+    FROM master_targets.staff_monthly_work_plan smwp
+    WHERE LOWER(smwp.staff_name) = LOWER(up_cro_tool_2025_2026.staff_name)
+      AND date_trunc('month', smwp.visit_month_year)
+          = date_trunc('month', up_cro_tool_2025_2026.visit_date)
+      AND LOWER(smwp.state) = 'uttar pradesh'
+    LIMIT 1
+  ),
+  15
+) AS target_visits,
+      
       1 as actual_visits,
       1 as classroom_obs,
       subject,
       ('Grade ' || class) as grade,
+      
+      -- NEW: Visit Type
+      COALESCE(visit_type, 'Individual') as visit_type,
+      
       null as gender,
       coalesce(enrolled_students :: int, 0) as students_enrolled,
       coalesce(present_students :: int, 0) as students_present,
       (q3 = 'Yes') as teacher_guide_available,
-      CASE WHEN q3 = 'Yes' THEN 'All Steps' WHEN q3 = 'No' THEN 'No Steps' ELSE 'Other' END as teacher_guide_followed,
-      CASE WHEN concat_ws('', q3_h_11, q3_m_6) = 'Yes' THEN true ELSE false END AS tracker_filled,
+      CASE 
+        WHEN q3 = 'Yes' THEN 'All Steps' 
+        WHEN q3 = 'No' THEN 'No Steps' 
+        ELSE 'Other' 
+      END as teacher_guide_followed,
+      CASE 
+        WHEN concat_ws('', q3_h_11, q3_m_6) = 'Yes' THEN true 
+        ELSE false 
+      END AS tracker_filled,
       (class_situation = 'mg') as is_multigrade,
       (ssi_2_effectiveness = 'Yes') as ssi2_effective,
       (ssi_3_effectiveness = 'Yes') as ssi3_effective,
-      jsonb_build_object('pp1', ssi_lit_1 = '1', 'pp2', ssi_lit_2 = '1', 'pp3', ssi_lit_3 = '1', 'pp4', ssi_lit_4 = '1', 'gp1', ssi_num_1 = '1', 'gp2', ssi_num_2 = '1', 'gp3', ssi_num_3 = '1') as practices,
+      jsonb_build_object(
+        'pp1', ssi_lit_1 = '1', 
+        'pp2', ssi_lit_2 = '1', 
+        'pp3', ssi_lit_3 = '1', 
+        'pp4', ssi_lit_4 = '1', 
+        'gp1', ssi_num_1 = '1', 
+        'gp2', ssi_num_2 = '1', 
+        'gp3', ssi_num_3 = '1'
+      ) as practices,
       udise_code as school_id,
       username as arp_id
     FROM surveycto_gsheet_data.up_cro_tool_2025_2026
@@ -204,27 +273,33 @@ const getFilteredVisits = async (filters) => {
   let combinedQuery = `SELECT * FROM ((${haryanaQuery}) UNION ALL (${upQuery})) as all_visits WHERE 1=1`;
 
   const params = [];
-  
-  if (state && !['All', 'All States'].includes(state)) {
+
+  if (state && !["All", "All States"].includes(state)) {
     params.push(state.toLowerCase());
     combinedQuery += ` AND state = $${params.length}`;
   }
-  if (district && !['All', 'All Districts'].includes(district)) {
+  if (district && !["All", "All Districts"].includes(district)) {
     params.push(district.toLowerCase());
     combinedQuery += ` AND lower(district) = $${params.length}`;
   }
-  if (block && !['All', 'All Blocks'].includes(block)) {
+  if (block && !["All", "All Blocks"].includes(block)) {
     params.push(block.toLowerCase());
     combinedQuery += ` AND lower(block) = $${params.length}`;
   }
-  if (subject && subject !== 'All') {
+  if (subject && subject !== "All") {
     params.push(subject.toLowerCase());
     combinedQuery += ` AND LOWER(subject) = $${params.length}`;
   }
-  if (grade && grade !== 'All') {
-    params.push(grade); // Grades are usually specific strings like 'Grade 1'
+  if (grade && grade !== "All") {
+    params.push(grade);
     combinedQuery += ` AND grade = $${params.length}`;
   }
+  // NEW: Visit Type filter
+  if (visit_type && visit_type !== "All") {
+    params.push(visit_type);
+    combinedQuery += ` AND visit_type = $${params.length}`;
+  }
+
   const result = await db.query(
     combinedQuery + " ORDER BY visit_date DESC",
     params
@@ -263,14 +338,11 @@ const getMetricsByCategory = async (category) => {
   return result.rows[0]?.data || null;
 };
 
-// basic-backend/src/services/dashboardService.js
-
 const wrapGeoJSON = (features) => ({
   type: "FeatureCollection",
-  features: features || []
+  features: features || [],
 });
 
-// National View: Union districts to create state outlines
 const getNationalBoundaries = async () => {
   const query = `
     SELECT 
@@ -286,7 +358,6 @@ const getNationalBoundaries = async () => {
   return wrapGeoJSON(res.rows);
 };
 
-// State View: Show districts for the selected state
 const getStateBoundaries = async (stateName) => {
   const query = `
     SELECT 
@@ -301,7 +372,6 @@ const getStateBoundaries = async (stateName) => {
   return wrapGeoJSON(res.rows);
 };
 
-// District View: Show sub-districts (blocks) for the selected district
 const getDistrictBoundaries = async (distName) => {
   const query = `
     SELECT 
@@ -332,11 +402,10 @@ const getBlockBoundaries = async (blockName) => {
       WHERE LOWER(sub_dist) = $1 AND geojson IS NOT NULL;
     `;
     const res = await db.query(query, [blockName.toLowerCase()]);
-    
-    // Return standard FeatureCollection format
+
     return {
       type: "FeatureCollection",
-      features: res.rows
+      features: res.rows,
     };
   } catch (err) {
     console.error("SQL Error in getBlockBoundaries:", err.message);
@@ -352,5 +421,5 @@ module.exports = {
   getNationalBoundaries,
   getStateBoundaries,
   getDistrictBoundaries,
-  getBlockBoundaries
+  getBlockBoundaries,
 };
