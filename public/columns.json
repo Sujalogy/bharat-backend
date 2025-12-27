@@ -1,0 +1,6388 @@
+{
+"SELECT \r\n    table_name, \r\n    column_name, \r\n    data_type\r\nFROM \r\n    information_schema.columns\r\nWHERE \r\n    table_schema = 'surveycto_gsheet_data'\r\n    AND table_name IN (\r\n        'up_cro_tool_2025_2026',\r\n        'haryana_cro_tool_2025_26',\r\n        'new_cro_form_bastar_mle_2025_26',\r\n        'new_cro_form_balod_aug25',\r\n        'cro_crp_jharkhand_202526', \r\n        'llf_team_cro_jharkhand_202526',\r\n        'govt_bahubhashi_pilot_karyakram_2025_2026'\r\n    )\r\nORDER BY \r\n    table_name, \r\n    column_name": [
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "actual_week1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "attendance_boys_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "attendance_boys_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "attendance_boys_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "attendance_girls_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "attendance_girls_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "attendance_girls_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "attendance_total_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "attendance_total_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "attendance_total_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ay",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "block",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "btb_available",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "caseid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "classroom_effective_lit",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "classroom_effective_num",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "cluster",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "confirmation_details",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "crp_brp_mobile",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "crp_brp_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "crp_list",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "d1_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "d3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "d4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "d5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "d6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "day1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "dec_activity_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "dec_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "designation1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "device_info",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "deviceid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "devicephonenum",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "duration",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "eb_available",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "endtime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "enrollment_boys_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "enrollment_boys_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "enrollment_boys_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "enrollment_girls_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "enrollment_girls_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "enrollment_girls_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "enrollment_total_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "enrollment_total_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "enrollment_total_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "f10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "f11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "f5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "f6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "f7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "f8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "f9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "fetched_on",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "g10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "g11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "g12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "g4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "g6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "g7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "g8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "g9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "grade",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "key",
+		"data_type" : "uuid"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l14",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l15",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l16",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l17",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l22",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l23",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l24",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "l8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "n9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "old_activity_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "old_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "other_activities",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "other_skill",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "read_activity_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "read_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "review_quality",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "row_number",
+		"data_type" : "integer"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "school",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_all_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_all_final_lit",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_all_final_num",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_gp_lit_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_gp_lit_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_gp_lit_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_gp_lit_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_gp_num_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_gp_num_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_gp_num_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_gp_num_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_lit_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_lit_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_lit_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_lit_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_lit_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_num_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_num_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_num_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_num_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "ssi_num_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "starttime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "subject",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "submissiondate",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "tb_available",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "teacher_name1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "teacher_name2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "teacher_name3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "tg_available",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "udise_code_entry",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "udise_wrong",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "username",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "visit_date",
+		"data_type" : "date"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "visit_month_year",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "visit_quarter_year",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "visit_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "week1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "write_activity_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "cro_crp_jharkhand_202526",
+		"column_name" : "write_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "assessment_revision_2_8_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "block",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "caseid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "confirmation_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "confirmation_details",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "day_actual",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "day_expected",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "day_observation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "designation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "designation_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "device_info",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "deviceid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "devicephonenum",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "duration",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "employee_id",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "endtime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "fetched_on",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "grade_observed",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "key",
+		"data_type" : "uuid"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "location_assessor",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_higherorderq_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_higherorderq_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_higherorderq_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_higherorderq_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_letterrecognition_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_letterrecognition_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_letterrecognition_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_letterrecognition_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_sentence_reading_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_sentence_reading_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_sentence_reading_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_sentence_reading_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_vocab_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_vocab_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_vocab_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_vocab_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_wordreading_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_wordreading_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_wordreading_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "marks_wordreading_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "mobile",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "n_remedial",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "n_total_students",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "name_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "obs_endtime",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "obs_starttime",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "obs_totaltime",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "orgname",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_2_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_2_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_2_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_2_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_2_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_2_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_2_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_3_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_3_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_3_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_3_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_4_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_4_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_4_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_4_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_4_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_4_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_5_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_5_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_5_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_6_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_6_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_6_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_7_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q2_7_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q3_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q3_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q3_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q4_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q4_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q4_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q4_4_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "q4_4_3_feedback",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "remdial_identified",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "repeat_2_8_2_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "review_quality",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "revision",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "row_number",
+		"data_type" : "integer"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "school",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "skiplogic_2_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "skiplogic_2_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "skiplogic_2_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "skiplogic_2_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "skiplogic_2_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "skiplogic_2_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "starttime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "student_name_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "student_name_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "student_name_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "student_name_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "students_enrolled",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "students_present",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "submissiondate",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "teacher_following_tg",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "udise_code",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "username",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "week_actual",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "govt_bahubhashi_pilot_karyakram_2025_2026",
+		"column_name" : "week_expected",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "abrc_gender",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "abrc_mobile_number",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "abrc_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ambala_district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ay",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "block",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "cal_startdate",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "cal_visitdate",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "case_final_status",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "caseid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "class",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "class_situation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "cluster",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "confirmation_details",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "date_diff",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "designation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "device_info",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "deviceid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "devicephonenum",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "duration",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "dv_assigened_users",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "dv_case_id",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "dv_case_lable",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "dv_form_id",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "dv_v_num_id",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "endtime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "enrolled_students",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "enrolled_students_boys",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "enrolled_students_girls",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "fetched_on",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "geo1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "hisar_district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "jv_varification_central",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "jv_varification_d_spt",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "jv_varification_district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "jv_varification_state",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "key",
+		"data_type" : "uuid"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "lessonplan_day",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "lessonplan_week",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "mentor_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "mentor_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "mg_situation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "other_remark",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ov_assigened_users",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ov_case_id",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ov_case_lable",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ov_form_id",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ov_v_num_id",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "period",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "present_students",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "present_students_boys",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "present_students_girls",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "pull_id_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "pull_id_oth_v",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "pull_id_oth_v_ds",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_1oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_4_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_4_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_4_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_4_2_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_4_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_4_3_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_5_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_5_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_5_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_5_2_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_5_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_5_3_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_5_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_5_4_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_5_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_5_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_6_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_6_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_2_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_3_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_4_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_6_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_7_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_8_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_8_9_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_2_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_3_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_4_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_6_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_h_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_m_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_m_1_oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_m_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_m_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_m_3a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_m_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_m_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_m_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_m_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q3_oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q4_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q4_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q4_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q4_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q4_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q4_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_a1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_a2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_a2_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_a2_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_a3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_a3_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_a3_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_a4_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_a4_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_b1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_b2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_b3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_b4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_b5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_b6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_b7_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q5_b7_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q6_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q6_1_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q6_1_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q6_1_2_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q6_1_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q6_1_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q6_1_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q6_1a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q7_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q7_1a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q7_1b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_13",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_14",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_14a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_14b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_15",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_16",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_17",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_18",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_19",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_20",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_21",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_22",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_3a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "q8_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "rand_for_assigen",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "review_quality",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "row_number",
+		"data_type" : "integer"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "school",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "school_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "selected_v_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "selected_v_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "sirsa_district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "sortby",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_2_effectiveness",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_3_effectiveness",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_all_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_gp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_lit_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_lit_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_lit_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_lit_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_lit_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_num_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_num_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_num_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_num_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "ssi_num_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "staff_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "starttime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "state",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "subject",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "submissiondate",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "teacher_designation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "teacher_gender",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "teacher_mobile",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "teacher_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "tlm_avail",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "udise_code",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "username",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v10_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v10_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v1_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v1_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v2_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v2_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v3_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v3_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v4_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v4_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v5_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v5_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v6_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v6_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v7_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v7_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v8_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v8_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v9_wgt_dv",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v9_wgt_ov",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "v_stat_dist",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "verification_automation_benchmark",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "verification_status_district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "verification_status_others",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "visit_date",
+		"data_type" : "date"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "visit_month_year",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "visit_photo",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "visit_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "haryana_cro_tool_2025_26",
+		"column_name" : "wb_avail",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "actual_week1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "attendance_boys_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "attendance_boys_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "attendance_boys_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "attendance_girls_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "attendance_girls_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "attendance_girls_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "attendance_total_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "attendance_total_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "attendance_total_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ay",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "block",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "btb_available",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "caseid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "classroom_effective_lit",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "classroom_effective_num",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "cluster",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "confirmation_details",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "crp_brp_mobile",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "crp_brp_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "crp_list",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "d1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "d2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "d3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "d4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "d5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "d6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "day1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "dec_activity_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "dec_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "designation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "designation1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "device_info",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "deviceid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "devicephonenum",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "donor_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "duration",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "eb_available",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "endtime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "enrollment_boys_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "enrollment_boys_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "enrollment_boys_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "enrollment_girls_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "enrollment_girls_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "enrollment_girls_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "enrollment_total_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "enrollment_total_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "enrollment_total_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f13",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f14",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f14_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f14_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f15",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f16",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f17",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f17_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f17_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f17_3a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f17_4a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f17_5b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f17_6b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f18",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f19",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f20",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f21",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "f9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "fetched_on",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "g9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "geo1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "grade",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "key",
+		"data_type" : "uuid"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l13",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l14",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l15",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l16",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l17",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l18",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l19",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l20",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l21",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l22",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l23",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l24",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "l9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "n9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "old_activity_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "old_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "other_activities",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "other_skill",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "photograph_classroom",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "read_activity_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "read_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "review_quality",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "row_number",
+		"data_type" : "integer"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "school",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "school_allocated",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ss1_2_effectiveness1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ss1_2_effectiveness2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_2_effectiveness",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_all_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_all_final_lit",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_all_final_num",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_gp_lit_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_gp_lit_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_gp_lit_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_gp_lit_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_gp_num_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_gp_num_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_gp_num_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_gp_num_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_lit_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_lit_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_lit_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_lit_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_lit_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_num_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_num_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_num_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_num_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "ssi_num_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "starttime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "subject",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "submissiondate",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "tb_available",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "teacher_name1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "teacher_name2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "teacher_name3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "team",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "team_sa",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "tg_available",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "udise_code_entry",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "udise_wrong",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "username",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "visit_date",
+		"data_type" : "date"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "visit_month_year",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "visit_quarter_year",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "visit_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "week1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "write_activity_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "llf_team_cro_jharkhand_202526",
+		"column_name" : "write_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ay",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "block",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "blocks_num",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "cac_gender",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "cac_mobile_number",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "cac_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "cal_startdate",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "cal_visitdate",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "caseid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "class",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "class_situation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "cluster",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "confirmation_details",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "date_diff",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "designation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "device_info",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "deviceid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "devicephonenum",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "duration",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "endtime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "enrolled_students",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "enrolled_students_boys",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "enrolled_students_girls",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "fetched_on",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "geo1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "key",
+		"data_type" : "uuid"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "lessonplan_day",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "lessonplan_week",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "mentor_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "mentor_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "mg_situation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "other_remark",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "period",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "present_students",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "present_students_boys",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "present_students_girls",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_1oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_4_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_4_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_4_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_5_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_5_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_5_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_5_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_5_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_6_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_2_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_3_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_4_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_6_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_7_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_8_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_8_9_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_2_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_3_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_4_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_6_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_h_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_m_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_m_1_oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_m_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_m_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_m_3a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_m_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_m_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_m_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_m_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q3_oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q4_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q4_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q4_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q4_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q4_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q4_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q4_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_a1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_a2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_a2_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_a2_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_a3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_a3_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_a3_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_a4_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_a4_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_b1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_b2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_b3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_b4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_b5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_b6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_b7_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q5_b7_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q6_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q6_1_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q6_1_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q6_1_2_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q6_1_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q6_1_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q6_1_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q6_1a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q7_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q7_1a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q7_1b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_13",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_14",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_14a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_14b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_15",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_16",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_17",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_18",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_19",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_20",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_21",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_22",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_3fb",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "q8_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "review_quality",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "row_number",
+		"data_type" : "integer"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "school",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "school_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_2_effectiveness",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_3_effectiveness",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_all_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_gp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_lit_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_lit_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_lit_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_lit_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_lit_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_num_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_num_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_num_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_num_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "ssi_num_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "staff_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "starttime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "state",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "subject",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "submissiondate",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "teacher_designation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "teacher_gender",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "teacher_mobile",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "teacher_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "tlm_avail",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "udise_code",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "username",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "visit_date",
+		"data_type" : "date"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "visit_month_year",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "visit_photo",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "visit_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_balod_aug25",
+		"column_name" : "wb_avail",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "a1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "a2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "a3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "a4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "actual_week",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "attendance_boys_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "attendance_boys_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "attendance_boys_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "attendance_girls_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "attendance_girls_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "attendance_girls_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "attendance_total_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "attendance_total_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "attendance_total_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ay",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "b1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "b2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "b3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "b4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "block",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "blocks_num",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "c1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "c2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "cac_gender",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "cac_mobile_no",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "cac_mobile_no2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "cac_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "cac_name_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "cal_startdate",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "cal_visitdate",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "caseid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "class",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "cluster",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "confirmation_details",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "d1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "d2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "date_diff",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "designation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "device_info",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "deviceid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "devicephonenum",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "duration",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "endtime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "enrollment_boys_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "enrollment_boys_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "enrollment_boys_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "enrollment_girls_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "enrollment_girls_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "enrollment_girls_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "enrollment_total_g1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "enrollment_total_g2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "enrollment_total_g3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "fetched_on",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "geo1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "key",
+		"data_type" : "uuid"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "lessonplan_day",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "lessonplan_week",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "mentor_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "mentor_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity13",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "numeracy_activity9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "other_remark",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "period",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "photograph_classroom",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q17_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q17_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q17_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_1oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_5_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_8_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_8_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_8_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_8_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_8_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_8_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_8_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_8_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_8_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_bb_work",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_tb_work_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_tb_work_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_h_tb_work_c",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_m_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_m_1_oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_m_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_m_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_m_3a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_m_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_m_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_m_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_m_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q3_oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q4_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q4_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q4_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q4_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q4_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q4_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_a1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_a2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_a2_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_a2_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_a3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_a3_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_a3_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_a4_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_a4_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_b1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_b2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_b3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_b4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_b5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_b6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_b7_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q5_b7_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q6_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q6_1_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q6_1_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q6_1_2_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q6_1_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q6_1_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q6_1_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q6_1a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q7_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q7_1a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q7_1b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_13",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_14",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_14a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_14b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_15",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_16",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_17",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_18",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_19",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_20",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_21",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_22",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_3fb",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "q8_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "review_quality",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "row_number",
+		"data_type" : "integer"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "school",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_2_effectiveness",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_3_effectiveness",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_all_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_gp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_lit_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_lit_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_lit_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_lit_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_lit_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_num_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_num_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_num_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_num_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "ssi_num_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "staff_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "starttime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "state",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "subject",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "submissiondate",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "teacher_designation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "teacher_gender",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "teacher_mobile",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "teacher_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "textbook_work_count",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "udise_code",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "username",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "visit_date",
+		"data_type" : "date"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "visit_month_year",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "new_cro_form_bastar_mle_2025_26",
+		"column_name" : "visit_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "arp_gender",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "arp_mobile_number",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "arp_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ay",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "bhadohi_district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "block",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "cal_startdate",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "cal_visitdate",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "caseid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "chandauli_district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "class",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "class_situation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "cluster",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "confirmation_details",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "date_diff",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "designation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "device_info",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "deviceid",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "devicephonenum",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "duration",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "endtime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "enrolled_students",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "enrolled_students_boys",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "enrolled_students_girls",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "fatehpur_district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "fetched_on",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "geo1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "key",
+		"data_type" : "uuid"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "lessonplan_day",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "lessonplan_week",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "mentor_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "mentor_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "mg_situation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "other_remark",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "period",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "present_students",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "present_students_boys",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "present_students_girls",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_1oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_4_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_4_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_4_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_4_2_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_4_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_4_3_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_5_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_5_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_5_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_5_2_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_5_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_5_3_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_5_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_5_4_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_5_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_5_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_6_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_6_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_2_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_3_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_4_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_6_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_7_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_8_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_8_9_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_1_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_2_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_4_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_6_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_h_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_m_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_m_1_oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_m_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_m_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_m_3a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_m_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_m_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_m_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_m_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q3_oth",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q4_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q4_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q4_5_na",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q4_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q4_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q4_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_a1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_a2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_a2_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_a2_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_a3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_a3_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_a3_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_a4_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_a4_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_b1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_b2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_b3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_b4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_b5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_b5_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_b6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_b7_a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q5_b7_b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q6_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q6_1_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q6_1_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q6_1_2_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q6_1_2_other",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q6_1_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q6_1_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q6_1_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q6_1a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q7_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q7_1a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q7_1b",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_10",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_11",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_12",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_13",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_14",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_15",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_16",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_17",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_18",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_19",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_20",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_21",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_22",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_3a",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_5",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_6",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_7",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_8",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "q8_9",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "review_quality",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "row_number",
+		"data_type" : "integer"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "school",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "school_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "sharavasti_district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_2_effectiveness",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_3_effectiveness",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_all_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_gp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_lit_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_lit_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_lit_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_lit_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_lit_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_num_1",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_num_2",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_num_3",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_num_4",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "ssi_num_pp_final",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "staff_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "starttime",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "state",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "subject",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "submissiondate",
+		"data_type" : "timestamp with time zone"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "teacher_designation",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "teacher_gender",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "teacher_mobile",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "teacher_name",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "tlm_avail",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "udise_code",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "username",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "varanasi_district",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "visit_date",
+		"data_type" : "date"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "visit_month_year",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "visit_photo",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "visit_type",
+		"data_type" : "text"
+	},
+	{
+		"table_name" : "up_cro_tool_2025_2026",
+		"column_name" : "wb_avail",
+		"data_type" : "text"
+	}
+]}
