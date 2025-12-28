@@ -132,6 +132,95 @@ const getBlockGeo = async (req, res) => {
   } 
 };
 
+const getSummary = async (req, res) => {
+  try {
+    const filters = {
+      state: req.query.state,
+      district: req.query.district,
+      block: req.query.block,
+      year: req.query.year,
+      subject: req.query.subject,
+      grade: req.query.grade,
+      visit_type: req.query.visit_type
+    };
+    
+    const data = await dashboardService.getSummaryMetrics(filters);
+    
+    res.json({
+      success: true,
+      data,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Summary error:', error);
+    res.status(500).json({ 
+      success: false,
+      error: 'Failed to fetch summary metrics',
+      message: error.message 
+    });
+  }
+};
+
+const getChronicPerformers = async (req, res) => {
+  try {
+    const filters = {
+      state: req.query.state,
+      district: req.query.district,
+      block: req.query.block,
+      year: req.query.year
+    };
+    
+    const threshold = parseInt(req.query.threshold) || 3;
+    
+    const data = await dashboardService.getChronicPerformers(filters, threshold);
+    
+    res.json({
+      success: true,
+      data,
+      count: data.length,
+      threshold,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Chronic performers error:', error);
+    res.status(500).json({ 
+      success: false,
+      error: 'Failed to fetch chronic performers',
+      message: error.message 
+    });
+  }
+};
+
+const getChronicPlanners = async (req, res) => {
+  try {
+    const filters = {
+      state: req.query.state,
+      district: req.query.district,
+      block: req.query.block,
+      year: req.query.year
+    };
+    
+    const threshold = parseInt(req.query.threshold) || 3;
+    
+    const data = await dashboardService.getChronicPlanners(filters, threshold);
+    
+    res.json({
+      success: true,
+      data,
+      count: data.length,
+      threshold,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Chronic planners error:', error);
+    res.status(500).json({ 
+      success: false,
+      error: 'Failed to fetch chronic planners',
+      message: error.message 
+    });
+  }
+};
+
 module.exports = {
   getAnalytics,
   getSchoolsByBlock,
@@ -140,5 +229,8 @@ module.exports = {
   getNationalGeo,
   getStateGeo,
   getDistrictGeo,
-  getBlockGeo
+  getBlockGeo,
+  getSummary,
+  getChronicPerformers,
+  getChronicPlanners
 };

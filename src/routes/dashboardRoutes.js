@@ -23,4 +23,8 @@ router.get('/geo/state/:stateName', dashboardController.getStateGeo);
 router.get('/geo/district/:distName', dashboardController.getDistrictGeo);
 router.get('/geo/block/:blockName', dashboardController.getBlockGeo);
 
+router.get('/summary', dashboardController.getSummary);
+router.get('/chronic-performers', dashboardController.getChronicPerformers);
+router.get('/chronic-planners', dashboardController.getChronicPlanners);
+
 module.exports = router;
