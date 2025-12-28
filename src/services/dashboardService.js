@@ -135,8 +135,9 @@ const getHierarchyMetrics = async (filters) => {
   };
 };
 
+// UPDATED: getFilteredVisits function
 const getFilteredVisits = async (filters) => {
-  const { state, district, block, subject, grade, visit_type } = filters;
+  const { state, district, block, subject, grade, visit_type, month } = filters; // ✅ Add month
 
   const haryanaQuery = `
     SELECT
@@ -152,28 +153,24 @@ const getFilteredVisits = async (filters) => {
       staff_name as bac_name,
       15 as recommended_visits,
       
-      -- TARGET: Get from staff_monthly_work_plan based on BAC and month
       COALESCE(
-  (
-    SELECT smwp.total_visit_days
-    FROM master_targets.staff_monthly_work_plan smwp
-    WHERE LOWER(smwp.staff_name) = LOWER(haryana_cro_tool_2025_26.staff_name)
-      AND date_trunc('month', smwp.visit_month_year)
-          = date_trunc('month', haryana_cro_tool_2025_26.visit_date)
-      AND LOWER(smwp.state) = 'haryana'
-    LIMIT 1
-  ),
-  15
-) AS target_visits,
+        (
+          SELECT smwp.total_visit_days
+          FROM master_targets.staff_monthly_work_plan smwp
+          WHERE LOWER(smwp.staff_name) = LOWER(haryana_cro_tool_2025_26.staff_name)
+            AND date_trunc('month', smwp.visit_month_year)
+                = date_trunc('month', haryana_cro_tool_2025_26.visit_date)
+            AND LOWER(smwp.state) = 'haryana'
+          LIMIT 1
+        ),
+        15
+      ) AS target_visits,
       
       1 as actual_visits,
       1 as classroom_obs,
       subject,
       ('Grade ' || class) as grade,
-      
-      -- NEW: Visit Type
       COALESCE(visit_type, 'Individual') as visit_type,
-      
       teacher_gender as gender,
       coalesce(enrolled_students :: int, 0) as students_enrolled,
       coalesce(present_students :: int, 0) as students_present,
@@ -218,28 +215,24 @@ const getFilteredVisits = async (filters) => {
       staff_name as bac_name,
       15 as recommended_visits,
       
-      -- TARGET: Get from staff_monthly_work_plan based on BAC and month
       COALESCE(
-  (
-    SELECT smwp.total_visit_days
-    FROM master_targets.staff_monthly_work_plan smwp
-    WHERE LOWER(smwp.staff_name) = LOWER(up_cro_tool_2025_2026.staff_name)
-      AND date_trunc('month', smwp.visit_month_year)
-          = date_trunc('month', up_cro_tool_2025_2026.visit_date)
-      AND LOWER(smwp.state) = 'uttar pradesh'
-    LIMIT 1
-  ),
-  15
-) AS target_visits,
+        (
+          SELECT smwp.total_visit_days
+          FROM master_targets.staff_monthly_work_plan smwp
+          WHERE LOWER(smwp.staff_name) = LOWER(up_cro_tool_2025_2026.staff_name)
+            AND date_trunc('month', smwp.visit_month_year)
+                = date_trunc('month', up_cro_tool_2025_2026.visit_date)
+            AND LOWER(smwp.state) = 'uttar pradesh'
+          LIMIT 1
+        ),
+        15
+      ) AS target_visits,
       
       1 as actual_visits,
       1 as classroom_obs,
       subject,
       ('Grade ' || class) as grade,
-      
-      -- NEW: Visit Type
       COALESCE(visit_type, 'Individual') as visit_type,
-      
       null as gender,
       coalesce(enrolled_students :: int, 0) as students_enrolled,
       coalesce(present_students :: int, 0) as students_present,
@@ -294,10 +287,14 @@ const getFilteredVisits = async (filters) => {
     params.push(grade);
     combinedQuery += ` AND grade = $${params.length}`;
   }
-  // NEW: Visit Type filter
   if (visit_type && visit_type !== "All") {
     params.push(visit_type);
     combinedQuery += ` AND visit_type = $${params.length}`;
+  }
+  // ✅ NEW: Month filter
+  if (month && month !== "All") {
+    params.push(month.trim()); // Use TRIM to match database format
+    combinedQuery += ` AND TRIM(month) = $${params.length}`;
   }
 
   const result = await db.query(
@@ -306,6 +303,7 @@ const getFilteredVisits = async (filters) => {
   );
   return result.rows;
 };
+
 
 const getSchoolsByBlock = async (blockName) => {
   const query = `
@@ -414,9 +412,8 @@ const getBlockBoundaries = async (blockName) => {
 };
 
 const getSummaryMetrics = async (filters) => {
-  const { state, district, block, year, subject, grade, visit_type } = filters;
+  const { state, district, block, year, subject, grade, visit_type, month } = filters;
 
-  // Build WHERE clause dynamically
   const buildWhereClause = (params) => {
     const conditions = [];
     let paramIndex = 1;
@@ -449,6 +446,10 @@ const getSummaryMetrics = async (filters) => {
       conditions.push(`ay = $${paramIndex++}`);
       params.push(year);
     }
+    if (month && month !== 'All') {
+      conditions.push(`TRIM(month) = $${paramIndex++}`);
+      params.push(month.trim());
+    }
 
     return conditions.length > 0 ? 'WHERE ' + conditions.join(' AND ') : '';
   };
@@ -456,7 +457,7 @@ const getSummaryMetrics = async (filters) => {
   const params = [];
   const whereClause = buildWhereClause(params);
 
-  // UNIFIED QUERY: Get all summary metrics in one shot
+  // FIXED: Restructured to avoid nested aggregates
   const summaryQuery = `
     WITH unified_data AS (
       -- Haryana Data
@@ -472,7 +473,6 @@ const getSummaryMetrics = async (filters) => {
         subject,
         ('Grade ' || class) as grade,
         COALESCE(visit_type, 'Individual') as visit_type,
-        1 as actual_visits,
         COALESCE(
           (SELECT total_visit_days FROM master_targets.staff_monthly_work_plan 
            WHERE LOWER(staff_name) = LOWER(haryana_cro_tool_2025_26.staff_name)
@@ -498,7 +498,6 @@ const getSummaryMetrics = async (filters) => {
         subject,
         ('Grade ' || class) as grade,
         COALESCE(visit_type, 'Individual') as visit_type,
-        1 as actual_visits,
         COALESCE(
           (SELECT total_visit_days FROM master_targets.staff_monthly_work_plan 
            WHERE LOWER(staff_name) = LOWER(up_cro_tool_2025_2026.staff_name)
@@ -510,24 +509,56 @@ const getSummaryMetrics = async (filters) => {
       FROM surveycto_gsheet_data.up_cro_tool_2025_2026
     ),
     
-    bac_level AS (
+    -- ✅ FIXED: Calculate BAC metrics per month first
+    bac_monthly AS (
       SELECT 
         bac_name,
-        SUM(actual_visits) as bac_actual,
-        SUM(target_visits) as bac_target,
-        SUM(recommended_visits) as bac_recommended,
-        COUNT(DISTINCT CASE WHEN actual_visits < target_visits THEN month END) as months_missed,
-        COUNT(DISTINCT CASE WHEN target_visits < recommended_visits THEN month END) as months_underplanned
+        month,
+        COUNT(DISTINCT visit_date) as month_actual_visits,
+        MAX(target_visits) as month_target_visits,
+        MAX(recommended_visits) as month_recommended_visits,
+        CASE 
+          WHEN COUNT(DISTINCT visit_date) < MAX(target_visits) THEN 1 
+          ELSE 0 
+        END as missed_target,
+        CASE 
+          WHEN MAX(target_visits) < MAX(recommended_visits) THEN 1 
+          ELSE 0 
+        END as underplanned
       FROM unified_data
       ${whereClause}
+      GROUP BY bac_name, month
+    ),
+    
+    -- ✅ FIXED: Aggregate BAC totals
+    bac_totals AS (
+      SELECT
+        bac_name,
+        SUM(month_actual_visits) as total_actual,
+        SUM(month_target_visits) as total_target,
+        SUM(month_recommended_visits) as total_recommended,
+        SUM(missed_target) as months_missed,
+        SUM(underplanned) as months_underplanned,
+        CASE 
+          WHEN SUM(month_target_visits) > 0 
+          THEN (SUM(month_actual_visits)::float / SUM(month_target_visits) * 100)
+          ELSE 0 
+        END as achievement_pct,
+        CASE 
+          WHEN SUM(month_recommended_visits) > 0 
+          THEN (SUM(month_target_visits)::float / SUM(month_recommended_visits) * 100)
+          ELSE 0 
+        END as planning_pct
+      FROM bac_monthly
       GROUP BY bac_name
     ),
     
+    -- Monthly aggregates
     month_level AS (
       SELECT 
         month,
         month_num,
-        SUM(actual_visits) as month_actual,
+        COUNT(DISTINCT visit_date) as month_actual,
         SUM(target_visits) as month_target,
         SUM(recommended_visits) as month_recommended
       FROM unified_data
@@ -536,10 +567,11 @@ const getSummaryMetrics = async (filters) => {
       ORDER BY month_num
     ),
     
+    -- Yearly aggregates
     year_level AS (
       SELECT 
         ay as year,
-        SUM(actual_visits) as year_actual,
+        COUNT(DISTINCT visit_date) as year_actual,
         SUM(target_visits) as year_target,
         SUM(recommended_visits) as year_recommended
       FROM unified_data
@@ -550,13 +582,13 @@ const getSummaryMetrics = async (filters) => {
     
     SELECT 
       -- Overall Metrics
-      (SELECT COUNT(*) FROM bac_level WHERE bac_actual < bac_target) as missed_target_bacs,
-      (SELECT COUNT(*) FROM bac_level WHERE bac_target != bac_recommended) as fluctuated_target_bacs,
-      (SELECT SUM(bac_actual) FROM bac_level) as total_actual,
-      (SELECT SUM(bac_target) FROM bac_level) as total_target,
-      (SELECT SUM(bac_recommended) FROM bac_level) as total_recommended,
-      (SELECT COUNT(*) FROM bac_level WHERE months_missed >= 3) as chronic_underperformers,
-      (SELECT COUNT(*) FROM bac_level WHERE months_underplanned >= 3) as chronic_underplanners,
+      (SELECT COUNT(*) FROM bac_totals WHERE total_actual < total_target) as missed_target_bacs,
+      (SELECT COUNT(*) FROM bac_totals WHERE total_target != total_recommended) as fluctuated_target_bacs,
+      (SELECT SUM(total_actual) FROM bac_totals) as total_actual,
+      (SELECT SUM(total_target) FROM bac_totals) as total_target,
+      (SELECT SUM(total_recommended) FROM bac_totals) as total_recommended,
+      (SELECT COUNT(*) FROM bac_totals WHERE months_missed >= 3) as chronic_underperformers,
+      (SELECT COUNT(*) FROM bac_totals WHERE months_underplanned >= 3) as chronic_underplanners,
       (SELECT COUNT(DISTINCT bac_name) FROM unified_data ${whereClause}) as total_bacs,
       
       -- Monthly Aggregates
@@ -576,33 +608,20 @@ const getSummaryMetrics = async (filters) => {
       ) ORDER BY year) FROM year_level) as yearly_data,
       
       -- Performance Distribution
-      (SELECT COUNT(*) FROM bac_level WHERE 
-        CASE WHEN bac_target > 0 THEN (bac_actual::float / bac_target * 100) ELSE 0 END >= 100
-      ) as high_performers,
-      (SELECT COUNT(*) FROM bac_level WHERE 
-        CASE WHEN bac_target > 0 THEN (bac_actual::float / bac_target * 100) ELSE 0 END BETWEEN 80 AND 99.99
-      ) as medium_performers,
-      (SELECT COUNT(*) FROM bac_level WHERE 
-        CASE WHEN bac_target > 0 THEN (bac_actual::float / bac_target * 100) ELSE 0 END < 80
-      ) as low_performers,
+      (SELECT COUNT(*) FROM bac_totals WHERE achievement_pct >= 100) as high_performers,
+      (SELECT COUNT(*) FROM bac_totals WHERE achievement_pct >= 80 AND achievement_pct < 100) as medium_performers,
+      (SELECT COUNT(*) FROM bac_totals WHERE achievement_pct < 80) as low_performers,
       
       -- Planning Distribution
-      (SELECT COUNT(*) FROM bac_level WHERE 
-        CASE WHEN bac_recommended > 0 THEN (bac_target::float / bac_recommended * 100) ELSE 0 END >= 100
-      ) as full_planners,
-      (SELECT COUNT(*) FROM bac_level WHERE 
-        CASE WHEN bac_recommended > 0 THEN (bac_target::float / bac_recommended * 100) ELSE 0 END BETWEEN 80 AND 99.99
-      ) as partial_planners,
-      (SELECT COUNT(*) FROM bac_level WHERE 
-        CASE WHEN bac_recommended > 0 THEN (bac_target::float / bac_recommended * 100) ELSE 0 END < 80
-      ) as under_planners
+      (SELECT COUNT(*) FROM bac_totals WHERE planning_pct >= 100) as full_planners,
+      (SELECT COUNT(*) FROM bac_totals WHERE planning_pct >= 80 AND planning_pct < 100) as partial_planners,
+      (SELECT COUNT(*) FROM bac_totals WHERE planning_pct < 80) as under_planners
   `;
 
   try {
     const result = await db.query(summaryQuery, params);
     const row = result.rows[0];
 
-    // Calculate derived percentages
     const actualAchievement = row.total_target > 0 
       ? (row.total_actual / row.total_target) * 100 
       : 0;
@@ -720,7 +739,7 @@ const getChronicPerformers = async (filters, threshold = 3) => {
         state,
         district,
         block,
-        SUM(actual_visits) as total_actual,
+        COUNT(DISTINCT visit_date) as total_actual,
         SUM(target_visits) as total_target,
         COUNT(CASE WHEN actual_visits < target_visits THEN 1 END) as months_missed
       FROM unified_data
