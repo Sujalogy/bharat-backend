@@ -129,7 +129,6 @@ const getHierarchyMetrics = async (filters) => {
 const getFilteredVisits = async (filters) => {
   const { state, district, block, subject, grade, visit_type, month } = filters;
 
-  // ✅ Build a single unified query with LEFT JOIN instead of correlated subqueries
   const query = `
     WITH all_visits AS (
       -- Haryana data
@@ -167,15 +166,22 @@ const getFilteredVisits = async (filters) => {
         (h.class_situation = 'mg') as is_multigrade,
         (h.ssi_2_effectiveness = 'Yes') as ssi2_effective,
         (h.ssi_3_effectiveness = 'Yes') as ssi3_effective,
-        jsonb_build_object(
-          'pp1', h.ssi_lit_1 = '1', 
-          'pp2', h.ssi_lit_2 = '1', 
-          'pp3', h.ssi_lit_3 = '1', 
-          'pp4', h.ssi_lit_4 = '1', 
-          'gp1', h.ssi_num_1 = '1', 
-          'gp2', h.ssi_num_2 = '1', 
-          'gp3', h.ssi_num_3 = '1'
-        ) as practices,
+        json_build_object(
+            'pp_lit_1', ROUND(COUNT(*) FILTER (WHERE h.ssi_lit_1 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'pp_lit_2', ROUND(COUNT(*) FILTER (WHERE h.ssi_lit_2 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'pp_lit_3', ROUND(COUNT(*) FILTER (WHERE h.ssi_lit_3 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'pp_lit_4', ROUND(COUNT(*) FILTER (WHERE h.ssi_lit_4 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'pp_num_1', ROUND(COUNT(*) FILTER (WHERE h.ssi_num_1 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Math') OVER (), 0) * 100, 1),
+            'pp_num_2', ROUND(COUNT(*) FILTER (WHERE h.ssi_num_2 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Math') OVER (), 0) * 100, 1),
+            'pp_num_3', ROUND(COUNT(*) FILTER (WHERE h.ssi_num_3 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Math') OVER (), 0) * 100, 1),
+            'pp_num_4', ROUND(COUNT(*) FILTER (WHERE h.ssi_num_4 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Math') OVER (), 0) * 100, 1),
+            'gp_lit_1', ROUND(COUNT(*) FILTER (WHERE h.subject = 'Hindi' AND h.q4_4 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'gp_lit_2', ROUND(COUNT(*) FILTER (WHERE h.subject = 'Hindi' AND h.q4_8 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'gp_lit_3', ROUND(COUNT(*) FILTER (WHERE h.subject = 'Hindi' AND h.q3_h_7 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'gp_num_1', ROUND(COUNT(*) FILTER (WHERE h.subject = 'Math' AND h.q4_4 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Math') OVER (), 0) * 100, 1),
+            'gp_num_2', ROUND(COUNT(*) FILTER (WHERE h.subject = 'Math' AND h.q4_8 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Math') OVER (), 0) * 100, 1),
+            'gp_num_3', ROUND(COUNT(*) FILTER (WHERE h.subject = 'Math' AND h.q3_h_7 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE h.subject = 'Math') OVER (), 0) * 100, 1)
+        ) AS practice_indicators,
         h.udise_code as school_id,
         h.username as arp_id
       FROM surveycto_gsheet_data.haryana_cro_tool_2025_26 h
@@ -221,15 +227,22 @@ const getFilteredVisits = async (filters) => {
         (u.class_situation = 'mg') as is_multigrade,
         (u.ssi_2_effectiveness = 'Yes') as ssi2_effective,
         (u.ssi_3_effectiveness = 'Yes') as ssi3_effective,
-        jsonb_build_object(
-          'pp1', u.ssi_lit_1 = '1', 
-          'pp2', u.ssi_lit_2 = '1', 
-          'pp3', u.ssi_lit_3 = '1', 
-          'pp4', u.ssi_lit_4 = '1', 
-          'gp1', u.ssi_num_1 = '1', 
-          'gp2', u.ssi_num_2 = '1', 
-          'gp3', u.ssi_num_3 = '1'
-        ) as practices,
+        json_build_object(
+            'pp_lit_1', ROUND(COUNT(*) FILTER (WHERE u.ssi_lit_1 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'pp_lit_2', ROUND(COUNT(*) FILTER (WHERE u.ssi_lit_2 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'pp_lit_3', ROUND(COUNT(*) FILTER (WHERE u.ssi_lit_3 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'pp_lit_4', ROUND(COUNT(*) FILTER (WHERE u.ssi_lit_4 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'pp_num_1', ROUND(COUNT(*) FILTER (WHERE u.ssi_num_1 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Math') OVER (), 0) * 100, 1),
+            'pp_num_2', ROUND(COUNT(*) FILTER (WHERE u.ssi_num_2 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Math') OVER (), 0) * 100, 1),
+            'pp_num_3', ROUND(COUNT(*) FILTER (WHERE u.ssi_num_3 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Math') OVER (), 0) * 100, 1),
+            'pp_num_4', ROUND(COUNT(*) FILTER (WHERE u.ssi_num_4 = '1') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Math') OVER (), 0) * 100, 1),
+            'gp_lit_1', ROUND(COUNT(*) FILTER (WHERE u.subject = 'Hindi' AND u.q4_4 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'gp_lit_2', ROUND(COUNT(*) FILTER (WHERE u.subject = 'Hindi' AND u.q4_8 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'gp_lit_3', ROUND(COUNT(*) FILTER (WHERE u.subject = 'Hindi' AND u.q3_h_7 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Hindi') OVER (), 0) * 100, 1),
+            'gp_num_1', ROUND(COUNT(*) FILTER (WHERE u.subject = 'Math' AND u.q4_4 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Math') OVER (), 0) * 100, 1),
+            'gp_num_2', ROUND(COUNT(*) FILTER (WHERE u.subject = 'Math' AND u.q4_8 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Math') OVER (), 0) * 100, 1),
+            'gp_num_3', ROUND(COUNT(*) FILTER (WHERE u.subject = 'Math' AND u.q3_h_7 = 'Yes') OVER ()::numeric / NULLIF(COUNT(*) FILTER (WHERE u.subject = 'Math') OVER (), 0) * 100, 1)
+        ) AS practice_indicators,
         u.udise_code as school_id,
         u.username as arp_id
       FROM surveycto_gsheet_data.up_cro_tool_2025_2026 u
@@ -250,15 +263,15 @@ const getFilteredVisits = async (filters) => {
   }
   if (district && !["All", "All Districts"].includes(district)) {
     params.push(district.toLowerCase());
-    whereClause += ` AND LOWER(district) = $${params.length}`;
+    whereClause += ` AND district = $${params.length}`;
   }
   if (block && !["All", "All Blocks"].includes(block)) {
     params.push(block.toLowerCase());
-    whereClause += ` AND LOWER(block) = $${params.length}`;
+    whereClause += ` AND block = $${params.length}`;
   }
   if (subject && subject !== "All") {
     params.push(subject.toLowerCase());
-    whereClause += ` AND LOWER(subject) = $${params.length}`;
+    whereClause += ` AND subject = $${params.length}`;
   }
   if (grade && grade !== "All") {
     params.push(grade);
@@ -303,12 +316,350 @@ const getSchoolsByBlock = async (blockName) => {
   return result.rows;
 };
 
-const getMetricsByCategory = async (category) => {
-  const result = await db.query(
-    "SELECT data FROM dashboard_metrics WHERE category = $1",
-    [category]
-  );
-  return result.rows[0]?.data || null;
+/**
+ * GET COMPREHENSIVE CRO METRICS
+ * Aggregates all CRO-related data from both Haryana and UP
+ */
+const getCROMetrics = async (filters) => {
+  const { state, district, block, year, month, subject, grade, visit_type } =
+    filters;
+
+  const params = [];
+  let paramIndex = 1;
+  const conditions = [];
+
+  // Build WHERE clause dynamically
+  if (state && state !== "All") {
+    conditions.push(`state = $${paramIndex++}`);
+    params.push(state.toLowerCase());
+  }
+  if (district && district !== "All") {
+    conditions.push(`district = $${paramIndex++}`);
+    params.push(district.toLowerCase());
+  }
+  if (block && block !== "All") {
+    conditions.push(`block = $${paramIndex++}`);
+    params.push(block.toLowerCase());
+  }
+  if (year && year !== "All") {
+    conditions.push(`ay = $${paramIndex++}`);
+    params.push(year);
+  }
+  if (month && month !== "All") {
+    conditions.push(`TRIM(month) = $${paramIndex++}`);
+    params.push(month.trim());
+  }
+  if (subject && subject !== "All") {
+    conditions.push(`LOWER(subject) = $${paramIndex++}`);
+    params.push(subject.toLowerCase());
+  }
+  if (grade && grade !== "All") {
+    conditions.push(`grade = $${paramIndex++}`);
+    params.push(grade);
+  }
+  if (visit_type && visit_type !== "All") {
+    conditions.push(`visit_type = $${paramIndex++}`);
+    params.push(visit_type);
+  }
+
+  const whereClause =
+    conditions.length > 0 ? "WHERE " + conditions.join(" AND ") : "";
+
+  const query = `
+   WITH unified_cro AS (
+    -- Haryana CRO Data
+    SELECT 'haryana'                                 as state,
+           LOWER(district)                           as district,
+           LOWER(block)                              as block,
+           ay,
+           TRIM(TO_CHAR(visit_date, 'Month'))        as month,
+           subject,
+           ('Grade ' || class)                       as grade,
+           COALESCE(visit_type, 'Individual')        as visit_type,
+
+           -- SSI Indicators
+           (ssi_2_effectiveness = 'Yes')             as ssi2_effective,
+           (ssi_3_effectiveness = 'Yes')             as ssi3_effective,
+
+           -- Practice Indicators (PP & GP)
+           (ssi_lit_1 = '1')                         as pp_lit_1,
+           (ssi_lit_2 = '1')                         as pp_lit_2,
+           (ssi_lit_3 = '1')                         as pp_lit_3,
+           (ssi_lit_4 = '1')                         as pp_lit_4,
+           (ssi_num_1 = '1')                         as pp_num_1,
+           (ssi_num_2 = '1')                         as pp_num_2,
+           (ssi_num_3 = '1')                         as pp_num_3,
+           (ssi_num_4 = '1')                         as pp_num_4,
+           q4_4,
+           q4_8,
+           q3_h_7,
+
+           -- Teacher Guide
+           (q3 = 'Yes')                              as tg_available,
+           CASE
+               WHEN q3 = 'Yes' THEN 'All Steps'
+               WHEN q3 = 'No' THEN 'No Steps'
+               ELSE 'Partial Steps'
+               END                                   as tg_followed,
+
+           -- Student Counts
+           COALESCE(enrolled_students::int, 0)       as enrolled_students,
+           COALESCE(present_students::int, 0)        as present_students,
+           COALESCE(enrolled_students_boys::int, 0)  as enrolled_boys,
+           COALESCE(enrolled_students_girls::int, 0) as enrolled_girls,
+           COALESCE(present_students_boys::int, 0)   as present_boys,
+           COALESCE(present_students_girls::int, 0)  as present_girls,
+
+           -- Workbook & Tracker
+           wb_avail,
+           CONCAT_WS('', q3_h_9, q3_m_4)             as wb_usage,
+           CONCAT_WS('', q3_h_10, q3_m_5)            as wb_checked,
+           CONCAT_WS('', q3_h_11, q3_m_6)            as tracker_filled,
+
+           -- Demo & Remedial
+           q6_1                                      as demo_done,
+           q6_1a                                     as demo_done_by,
+           q4_5                                      as remedial_done,
+
+           -- Class Situation
+           CASE
+               WHEN class_situation = 'sg' THEN 'Single Grade'
+               WHEN class_situation = 'mg' THEN 'Multi Grade'
+               ELSE 'Other'
+               END                                   as class_situation,
+
+           -- Personnel
+           staff_name                                as arp_name,
+           teacher_gender,
+           school                                    as school_name
+
+    FROM surveycto_gsheet_data.haryana_cro_tool_2025_26
+
+    UNION ALL
+
+    -- UP CRO Data (same structure)
+    SELECT 'uttar pradesh'                           as state,
+           LOWER(district)                           as district,
+           LOWER(block)                              as block,
+           ay,
+           TRIM(TO_CHAR(visit_date, 'Month'))        as month,
+           subject,
+           ('Grade ' || class)                       as grade,
+           COALESCE(visit_type, 'Individual')        as visit_type,
+
+           (ssi_2_effectiveness = 'Yes')             as ssi2_effective,
+           (ssi_3_effectiveness = 'Yes')             as ssi3_effective,
+
+           (ssi_lit_1 = '1')                         as pp_lit_1,
+           (ssi_lit_2 = '1')                         as pp_lit_2,
+           (ssi_lit_3 = '1')                         as pp_lit_3,
+           (ssi_lit_4 = '1')                         as pp_lit_4,
+           (ssi_num_1 = '1')                         as pp_num_1,
+           (ssi_num_2 = '1')                         as pp_num_2,
+           (ssi_num_3 = '1')                         as pp_num_3,
+           (ssi_num_4 = '1')                         as pp_num_4,
+           q4_4,
+           q4_8,
+           q3_h_7,
+
+           (q3 = 'Yes')                              as tg_available,
+           CASE
+               WHEN q3 = 'Yes' THEN 'All Steps'
+               WHEN q3 = 'No' THEN 'No Steps'
+               ELSE 'Partial Steps'
+               END                                   as tg_followed,
+
+           COALESCE(enrolled_students::int, 0)       as enrolled_students,
+           COALESCE(present_students::int, 0)        as present_students,
+           COALESCE(enrolled_students_boys::int, 0)  as enrolled_boys,
+           COALESCE(enrolled_students_girls::int, 0) as enrolled_girls,
+           COALESCE(present_students_boys::int, 0)   as present_boys,
+           COALESCE(present_students_girls::int, 0)  as present_girls,
+
+           wb_avail,
+           CONCAT_WS('', q3_h_9, q3_m_4)             as wb_usage,
+           CONCAT_WS('', q3_h_10, q3_m_5)            as wb_checked,
+           CONCAT_WS('', q3_h_11, q3_m_6)            as tracker_filled,
+
+           q6_1                                      as demo_done,
+           q6_1a                                     as demo_done_by,
+           q4_5                                      as remedial_done,
+
+           CASE
+               WHEN class_situation = 'sg' THEN 'Single Grade'
+               WHEN class_situation = 'mg' THEN 'Multi Grade'
+               ELSE 'Other'
+               END                                   as class_situation,
+
+           staff_name                                as arp_name,
+           teacher_gender,
+           school                                    as school_name
+
+    FROM surveycto_gsheet_data.up_cro_tool_2025_2026)
+
+SELECT
+    -- Total Counts
+    COUNT(*)                    as total_observations,
+    COUNT(DISTINCT school_name) as unique_schools,
+    COUNT(DISTINCT arp_name)    as unique_arps,
+
+    -- Grade-wise Distribution
+    json_build_object(
+            'Grade 1', COUNT(*) FILTER (WHERE grade = 'Grade 1'),
+            'Grade 2', COUNT(*) FILTER (WHERE grade = 'Grade 2'),
+            'Grade 3', COUNT(*) FILTER (WHERE grade = 'Grade 3')
+    )                           as grade_distribution,
+
+    -- Subject-wise Distribution
+    json_build_object(
+            'Literacy', COUNT(*) FILTER (WHERE LOWER(subject) = 'Hindi'),
+            'Numeracy', COUNT(*) FILTER (WHERE LOWER(subject) = 'Math')
+    )                           as subject_distribution,
+
+    -- Visit Type Distribution
+    json_build_object(
+            'Individual', COUNT(*) FILTER (WHERE visit_type = 'Individual'),
+            'Joint', COUNT(*) FILTER (WHERE visit_type = 'Joint')
+    )                           as visit_type_distribution,
+
+    -- SSI Effectiveness
+    json_build_object(
+            'SSI-2 Effective', ROUND(COUNT(*) FILTER (WHERE ssi2_effective)::numeric / NULLIF(COUNT(*), 0) * 100, 1),
+            'SSI-3 Effective', ROUND(COUNT(*) FILTER (WHERE ssi3_effective)::numeric / NULLIF(COUNT(*), 0) * 100, 1)
+    )                           as ssi_effectiveness,
+
+    json_build_object(
+
+            'pp_lit_1',
+            ROUND(
+                    COUNT(*) FILTER (WHERE pp_lit_1)::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Hindi'), 0) * 100, 1
+            ),
+            'pp_lit_2',
+            ROUND(
+                    COUNT(*) FILTER (WHERE pp_lit_2)::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Hindi'), 0) * 100, 1
+            ),
+            'pp_lit_3',
+            ROUND(
+                    COUNT(*) FILTER (WHERE pp_lit_3)::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Hindi'), 0) * 100, 1
+            ),
+            'pp_lit_4',
+            ROUND(
+                    COUNT(*) FILTER (WHERE pp_lit_4)::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Hindi'), 0) * 100, 1
+            ),
+            'pp_num_1',
+            ROUND(
+                    COUNT(*) FILTER (WHERE pp_num_1)::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Math'), 0) * 100, 1
+            ),
+            'pp_num_2',
+            ROUND(
+                    COUNT(*) FILTER (WHERE pp_num_2)::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Math'), 0) * 100, 1
+            ),
+            'pp_num_3',
+            ROUND(
+                    COUNT(*) FILTER (WHERE pp_num_3)::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Math'), 0) * 100, 1
+            ),
+            'pp_num_4',
+            ROUND(
+                    COUNT(*) FILTER (WHERE pp_num_4)::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Math'), 0) * 100, 1
+            ),
+
+            'gp_lit_1',
+            ROUND(
+                    COUNT(*) FILTER (WHERE subject = 'Hindi' AND q4_4 = 'Yes')::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Hindi'), 0) * 100, 1
+            ),
+            'gp_lit_2',
+            ROUND(
+                    COUNT(*) FILTER (WHERE subject = 'Hindi' AND q4_8 = 'Yes')::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Hindi'), 0) * 100, 1
+            ),
+            'gp_lit_3',
+            ROUND(
+                    COUNT(*) FILTER (WHERE subject = 'Hindi' AND q3_h_7 = 'Yes')::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Hindi'), 0) * 100, 1
+            ),
+            'gp_num_1',
+            ROUND(
+                    COUNT(*) FILTER (WHERE subject = 'Math' AND q4_4 = 'Yes')::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Math'), 0) * 100, 1
+            ),
+            'gp_num_2',
+            ROUND(
+                    COUNT(*) FILTER (WHERE subject = 'Math' AND q4_8 = 'Yes')::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Math'), 0) * 100, 1
+            ),
+            'gp_num_3',
+            ROUND(
+                    COUNT(*) FILTER (WHERE subject = 'Math' AND q3_h_7 = 'Yes')::numeric
+                        / NULLIF(COUNT(*) FILTER (WHERE subject = 'Math'), 0) * 100, 1
+            )
+    )                           AS practice_indicators,
+
+    -- Teacher Guide Stats
+    json_build_object(
+            'Available', COUNT(*) FILTER (WHERE tg_available),
+            'All Steps', COUNT(*) FILTER (WHERE tg_followed = 'All Steps'),
+            'Partial Steps', COUNT(*) FILTER (WHERE tg_followed = 'Partial Steps'),
+            'No Steps', COUNT(*) FILTER (WHERE tg_followed = 'No Steps')
+    )                           as teacher_guide_stats,
+
+    -- Student Enrollment & Attendance
+    json_build_object(
+            'total_enrolled', SUM(enrolled_students),
+            'total_present', SUM(present_students),
+            'boys_enrolled', SUM(enrolled_boys),
+            'girls_enrolled', SUM(enrolled_girls),
+            'boys_present', SUM(present_boys),
+            'girls_present', SUM(present_girls),
+            'attendance_rate', ROUND(SUM(present_students)::numeric / NULLIF(SUM(enrolled_students), 0) * 100, 1)
+    )                           as student_stats,
+
+    -- Workbook & Tracker
+    json_build_object(
+            'wb_available', COUNT(*) FILTER (WHERE wb_avail = 'Yes'),
+            'wb_used', COUNT(*) FILTER (WHERE wb_usage = 'Yes'),
+            'wb_checked', COUNT(*) FILTER (WHERE wb_checked = 'Yes'),
+            'tracker_filled', COUNT(*) FILTER (WHERE tracker_filled = 'Yes')
+    )                           as workbook_tracker_stats,
+
+    -- Demo & Remedial
+    json_build_object(
+            'demo_conducted', COUNT(*) FILTER (WHERE demo_done = 'Yes'),
+            'remedial_done', COUNT(*) FILTER (WHERE remedial_done = 'Yes')
+    )                           as intervention_stats,
+
+    -- Class Situation
+    json_build_object(
+            'Single Grade', COUNT(*) FILTER (WHERE class_situation = 'Single Grade'),
+            'Multi Grade', COUNT(*) FILTER (WHERE class_situation = 'Multi Grade'),
+            'Other', COUNT(*) FILTER (WHERE class_situation = 'Other')
+    )                           as class_situation_distribution,
+
+    -- Teacher Gender Distribution
+    json_build_object(
+            'Male', COUNT(*) FILTER (WHERE teacher_gender = 'Male'),
+            'Female', COUNT(*) FILTER (WHERE teacher_gender = 'Female')
+    )                           as teacher_gender_distribution
+
+FROM unified_cro
+    ${whereClause}
+  `;
+
+  try {
+    const result = await db.query(query, params);
+    return result.rows[0];
+  } catch (error) {
+    console.error("CRO Metrics error:", error);
+    throw error;
+  }
 };
 
 const wrapGeoJSON = (features) => ({
@@ -673,33 +1024,34 @@ const getSummaryMetrics = async (filters) => {
  */
 const getChronicPerformers = async (filters, threshold = 3) => {
   const { state, district, block, year, month } = filters;
-  
+
   const params = [threshold];
   let paramIndex = 2;
   const conditions = [];
 
-  if (state && state !== 'All') {
+  if (state && state !== "All") {
     conditions.push(`u.state = $${paramIndex++}`);
     params.push(state.toLowerCase());
   }
-  if (district && district !== 'All') {
+  if (district && district !== "All") {
     conditions.push(`u.district = $${paramIndex++}`);
     params.push(district.toLowerCase());
   }
-  if (block && block !== 'All') {
+  if (block && block !== "All") {
     conditions.push(`u.block = $${paramIndex++}`);
     params.push(block.toLowerCase());
   }
-  if (year && year !== 'All') {
+  if (year && year !== "All") {
     conditions.push(`u.ay = $${paramIndex++}`);
     params.push(year);
   }
-  if (month && month !== 'All') {
+  if (month && month !== "All") {
     conditions.push(`TRIM(u.month) = $${paramIndex++}`);
     params.push(month.trim());
   }
 
-  const whereClause = conditions.length > 0 ? 'AND ' + conditions.join(' AND ') : '';
+  const whereClause =
+    conditions.length > 0 ? "AND " + conditions.join(" AND ") : "";
 
   // ✅ OPTIMIZED: Pre-join targets, calculate per BAC-month, then aggregate
   const query = `
@@ -813,29 +1165,30 @@ const getChronicPerformers = async (filters, threshold = 3) => {
  */
 const getChronicPlanners = async (filters, threshold = 3) => {
   const { state, district, block, year } = filters;
-  
+
   const params = [threshold];
   let paramIndex = 2;
   const conditions = [];
 
-  if (state && state !== 'All') {
+  if (state && state !== "All") {
     conditions.push(`u.state = $${paramIndex++}`);
     params.push(state.toLowerCase());
   }
-  if (district && district !== 'All') {
+  if (district && district !== "All") {
     conditions.push(`u.district = $${paramIndex++}`);
     params.push(district.toLowerCase());
   }
-  if (block && block !== 'All') {
+  if (block && block !== "All") {
     conditions.push(`u.block = $${paramIndex++}`);
     params.push(block.toLowerCase());
   }
-  if (year && year !== 'All') {
+  if (year && year !== "All") {
     conditions.push(`u.ay = $${paramIndex++}`);
     params.push(year);
   }
 
-  const whereClause = conditions.length > 0 ? 'AND ' + conditions.join(' AND ') : '';
+  const whereClause =
+    conditions.length > 0 ? "AND " + conditions.join(" AND ") : "";
 
   // ✅ OPTIMIZED: Pre-join targets, calculate planning per BAC-month
   const query = `
@@ -948,7 +1301,7 @@ const getChronicPlanners = async (filters, threshold = 3) => {
 module.exports = {
   getFilteredVisits,
   getSchoolsByBlock,
-  getMetricsByCategory,
+  getCROMetrics,
   getHierarchyMetrics,
   getNationalBoundaries,
   getStateBoundaries,

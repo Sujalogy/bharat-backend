@@ -45,16 +45,31 @@ const getSchoolsByBlock = async (req, res) => {
 };
 
 const getDashboardData = async (req, res) => {
-  const category = req.path.split('/').pop() || 'cro'; 
-  
   try {
-    const data = await dashboardService.getMetricsByCategory(category);
+    const filters = {
+      state: req.query.state,
+      district: req.query.district,
+      block: req.query.block,
+      year: req.query.year,
+      month: req.query.month,
+      subject: req.query.subject,
+      grade: req.query.grade,
+      visit_type: req.query.visit_type
+    };
     
-    res.json(data || {});
+    // Get comprehensive CRO metrics
+    const data = await dashboardService.getCROMetrics(filters);
+    
+    res.json({
+      success: true,
+      data,
+      timestamp: new Date().toISOString()
+    });
   } catch (error) {
-    console.error('Dashboard data error:', error);
+    console.error('CRO metrics error:', error);
     res.status(500).json({ 
-      error: 'Failed to fetch dashboard data',
+      success: false,
+      error: 'Failed to fetch CRO metrics',
       message: error.message 
     });
   }
@@ -145,7 +160,6 @@ const getSummary = async (req, res) => {
       visit_type: req.query.visit_type,
       month: req.query.month
     };
-    console.log(req.query)
     
     const data = await dashboardService.getSummaryMetrics(filters);
     
