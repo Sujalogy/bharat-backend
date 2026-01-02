@@ -414,10 +414,10 @@ const getBlockBoundaries = async (blockName) => {
 const getSummaryMetrics = async (filters) => {
   const { state, district, block, year, subject, grade, visit_type, month } = filters;
 
+  // console.log(filters)
   const buildWhereClause = (params) => {
     const conditions = [];
     let paramIndex = 1;
-    
     if (state && state !== 'All') {
       conditions.push(`state = $${paramIndex++}`);
       params.push(state.toLowerCase());
@@ -684,7 +684,7 @@ const getSummaryMetrics = async (filters) => {
  * OPTIMIZED: Get chronic performers list (only when needed)
  */
 const getChronicPerformers = async (filters, threshold = 3) => {
-  const { state, district, block, year, subject, grade, visit_type } = filters;
+  const { state, district, block, year, subject, grade, visit_type, month } = filters;
   
   const params = [threshold];
   let paramIndex = 2;
@@ -713,6 +713,7 @@ const getChronicPerformers = async (filters, threshold = 3) => {
         LOWER(district) as district,
         LOWER(block) as block,
         1 as actual_visits,
+        visit_date,
         COALESCE((SELECT total_visit_days FROM master_targets.staff_monthly_work_plan 
                   WHERE LOWER(staff_name) = LOWER(haryana_cro_tool_2025_26.staff_name)
                   AND date_trunc('month', visit_month_year) = date_trunc('month', haryana_cro_tool_2025_26.visit_date)
@@ -727,6 +728,8 @@ const getChronicPerformers = async (filters, threshold = 3) => {
         LOWER(district) as district,
         LOWER(block) as block,
         1 as actual_visits,
+        visit_date,
+
         COALESCE((SELECT total_visit_days FROM master_targets.staff_monthly_work_plan 
                   WHERE LOWER(staff_name) = LOWER(up_cro_tool_2025_2026.staff_name)
                   AND date_trunc('month', visit_month_year) = date_trunc('month', up_cro_tool_2025_2026.visit_date)
@@ -744,7 +747,7 @@ const getChronicPerformers = async (filters, threshold = 3) => {
         COUNT(CASE WHEN actual_visits < target_visits THEN 1 END) as months_missed
       FROM unified_data
       WHERE 1=1 ${whereClause}
-      GROUP BY bac_name, state, district, block
+      GROUP BY bac_name, state, district, block, visit_date
       HAVING COUNT(CASE WHEN actual_visits < target_visits THEN 1 END) >= $1
     )
     SELECT 

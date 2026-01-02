@@ -8,7 +8,8 @@ const getAnalytics = async (req, res) => {
       block: req.query.block,
       year: req.query.year,
       subject: req.query.subject,
-      grade: req.query.grade
+      grade: req.query.grade,
+      month: req.query.month
     };
     
     const data = await dashboardService.getFilteredVisits(filters);
@@ -141,8 +142,10 @@ const getSummary = async (req, res) => {
       year: req.query.year,
       subject: req.query.subject,
       grade: req.query.grade,
-      visit_type: req.query.visit_type
+      visit_type: req.query.visit_type,
+      month: req.query.month
     };
+    console.log(req.query)
     
     const data = await dashboardService.getSummaryMetrics(filters);
     
@@ -167,7 +170,8 @@ const getChronicPerformers = async (req, res) => {
       state: req.query.state,
       district: req.query.district,
       block: req.query.block,
-      year: req.query.year
+      year: req.query.year,
+      month : req.query.month,
     };
     
     const threshold = parseInt(req.query.threshold) || 3;
